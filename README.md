@@ -8,7 +8,7 @@ Project Goals
 
 The project aims to:
 
-Collect key performance metrics including goals, assists, passes, tackles, interceptions, and overall player ratings.
+Collect key performance metrics including goals, assists, passes, tackles, interceptions, and overall player ratings.\
 
 Provide a centralized database for match and player data.
 
