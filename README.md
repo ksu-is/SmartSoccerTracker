@@ -18,15 +18,15 @@ Enable player comparison through analytical models and statistical summaries.
 
 Features
 
-⚽ Comprehensive Player Stats: Track offensive, defensive, and passing metrics for all players in the top leagues.
+- Comprehensive Player Stats: Track offensive, defensive, and passing metrics for all players in the top leagues.
 
-📊 Data Visualization: View clean, intuitive dashboards summarizing trends and comparisons.
+- Data Visualization: View clean, intuitive dashboards summarizing trends and comparisons.
 
-🔍 Player Lookup: Search and retrieve stats for your favorite players in real-time.
+- Player Lookup: Search and retrieve stats for your favorite players in real-time.
 
-🧠 Analytical Tools: Identify performance trends, consistency ratings, and match-by-match evaluations.
+- Analytical Tools: Identify performance trends, consistency ratings, and match-by-match evaluations.
 
-💾 Data Logging: Automatically log and store player match data for continuous analysis.
+- Data Logging: Automatically log and store player match data for continuous analysis.
 
 Technical Components
 
