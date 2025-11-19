@@ -14,3 +14,5 @@ Sprint 2 Task
 - [ ] Make changes to readme and projectroadmap if needed
 
 Sprint 3 Task      
+- [ ] add the player to the database so when a player is inputed the stats come back quickly
+- [ ] 
