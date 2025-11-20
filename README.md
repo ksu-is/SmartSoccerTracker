@@ -66,5 +66,5 @@ Contributors
 
 Developed and maintained by the SmartSoccerTracker Team
 
-For inquiries or contributions, please open an issue or submit a pull request.
+For inquiries or contributions, please open an issue or submit a pull request
 
