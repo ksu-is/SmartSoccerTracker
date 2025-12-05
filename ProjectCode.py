@@ -9,3 +9,5 @@ HEADERS = {
 
 def search_player(player_name):
    url = "https://api-football-v1.p.rapidapi.com/v3/players"
+   res =  requests.get(url, headers=HEADERS)
+   data = res.json()
