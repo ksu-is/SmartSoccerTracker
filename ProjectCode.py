@@ -24,4 +24,31 @@ players = data.get("players", [])
           "id": p.get("name")
           "name": p.get("name")
           "team": p.get("team", {}.get("name"),
-          "league": league              
+          "league": league           
+     }
+
+     print("Player Found, but not in Premier League, La Liga, or Serie A.")
+       return None
+
+    return {
+      "games": stats.get("games",0),
+      "minutes": stats.get("minutes",0),
+      "goals": stats.get("goals",0)
+      "assists": stats.get("assists",0)
+      "rating": stats.get("averageRating", 0)
+  }
+
+def main():
+    print("=== SmartSoccerTracker ===")
+    player_name = input("Enter player name: ")
+
+    info = search_player(player_name)
+    if not info:
+       return
+
+  stats = get_stats(info["id"])
+  if not stats:
+       print("No stats found for this player.")
+       return
+
+  
