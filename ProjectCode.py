@@ -51,4 +51,20 @@ def main():
        print("No stats found for this player.")
        return
 
+  print("\n--- Player Info ---")
+  print("Name:", info["name"])
+  print("Team:", info["team"])
+  print("League:", info["league"])
+
+  print("\n--- Stats ---")
+  print("Games:", stats["games"])
+  print("Minutes:", stats["minutes"])
+  print("Goals:", stats["goals"])
+  print("Assists:," stats["assists"])
+  print("Avg Rating:", stats["rating"])
+
+  if __name__ == "__main__":
+      main()
+        
+
   
