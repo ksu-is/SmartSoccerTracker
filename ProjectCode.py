@@ -2,11 +2,15 @@
 import requests
 from b24 import BeautifulSoup
 
-HEADERS = {
-  "User-Agent": "Mozilla/5.0"
+"X-RapidAPI-Key": "YOUR_API_KEY_HERE",
+    "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com",
+    "User-Agent": "Mozilla/5.0"
 }
-TOP_LEAGUES = ["Premier League", "LaLiga", "Serie A"]
 
+TOP_LEAGUES = [
+    "Premier League",
+    "La Liga",
+    "Serie A"
 def search_player(player_name):
    url = "https://api-football-v1.p.rapidapi.com/v3/players"
  r = requests.get(url, headers=HEADERS)
