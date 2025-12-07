@@ -11,24 +11,29 @@ TOP_LEAGUES = [
     "Premier League",
     "La Liga",
     "Serie A"
-def search_player(player_name):
-   url = "https://api-football-v1.p.rapidapi.com/v3/players"
- r = requests.get(url, headers=HEADERS)
-    data = r.json()
-players = data.get("players", [])
-   if not players: 
-     print("No player found.")
-     return none
+]
 
+def search_player(player_name):
+    url = f"https://api-football-v1.p.rapidapi.com/v3/players?search={player_name}"
+    res = requests.get(url, headers=HEADERS)
+
+    if res.status_code != 200:
+        print("API Error:", res.status_code, res.text)
+        return None
+
+    data = res.json()
+    players = data.get("response", [])
    for p in players:
-     league = p.get("team", {}).get("tournament", {}).get("name", "")
-     if league in TOP_LEAGUES:
-       return {
-          "id": p.get("name")
-          "name": p.get("name")
-          "team": p.get("team", {}.get("name"),
-          "league": league           
-     }
+        league = p.get("statistics", [{}])[0].get("league", {}).get("name", "")
+
+        if league in TOP_LEAGUES:
+            return {
+                "id": p.get("player", {}).get("id"),
+                "name": p.get("player", {}).get("name"),
+                "team": p.get("statistics", [{}])[0].get("team", {}).get("name", ""),
+                "league": league
+            }
+     
 
      print("Player Found, but not in Premier League, La Liga, or Serie A.")
        return None
