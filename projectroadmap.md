@@ -15,4 +15,5 @@ Sprint 2 Task
 
 Sprint 3 Task      
 - [ ] add the player to the database so when a player is inputed the stats come back quickly
-- [ ] 
+- [ ] Make a code so all the stats needed for a player show.
+- [ ] Make a schedule for your presentation
