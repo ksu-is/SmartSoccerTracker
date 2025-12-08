@@ -23,7 +23,12 @@ def search_player(player_name):
 
     data = res.json()
     players = data.get("response", [])
-   for p in players:
+   
+if not players:
+        print("No player found.")
+        return None
+
+    for p in players:
         league = p.get("statistics", [{}])[0].get("league", {}).get("name", "")
 
         if league in TOP_LEAGUES:
@@ -33,44 +38,15 @@ def search_player(player_name):
                 "team": p.get("statistics", [{}])[0].get("team", {}).get("name", ""),
                 "league": league
             }
-     
 
-     print("Player Found, but not in Premier League, La Liga, or Serie A.")
-       return None
+     print("Player found, but not in top leagues.")
+    return None
+if __name__ == "__main__":
+    name = input("Enter a player name: ")
+    result = search_player(name)
 
-    return {
-      "games": stats.get("games",0),
-      "minutes": stats.get("minutes",0),
-      "goals": stats.get("goals",0)
-      "assists": stats.get("assists",0)
-      "rating": stats.get("averageRating", 0)
-  }
+    if result:
+        print("Player found in top league:")
+        print(result)
 
-def main():
-    print("=== SmartSoccerTracker ===")
-    player_name = input("Enter player name: ")
-
-    info = search_player(player_name)
-    if not info:
-       return
-
-  stats = get_stats(info["id"])
-  if not stats:
-       print("No stats found for this player.")
-       return
-
-  print("\n--- Player Info ---")
-  print("Name:", info["name"])
-  print("Team:", info["team"])
-  print("League:", info["league"])
-
-  print("\n--- Stats ---")
-  print("Games:", stats["games"])
-  print("Minutes:", stats["minutes"])
-  print("Goals:", stats["goals"])
-  print("Assists:," stats["assists"])
-  print("Avg Rating:", stats["rating"])
-
-  if __name__ == "__main__":
-      main()
         
